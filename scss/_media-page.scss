@@ -845,5 +845,10 @@
             width: 100%;
             height: rem(200);
         }
+
+        // .masonry-grid__item--grid
+        &__item--grid {
+            height: max-content;
+        }
     }
 }
