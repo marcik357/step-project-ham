@@ -1,0 +1,198 @@
+@media (max-width: 991.98px) {
+    .header {
+
+        // .header__wrapper
+        &__wrapper {
+            padding: rem(21) 0 rem(18);
+        }
+    }
+
+    .logo {
+
+        // .logo__icon
+        &__icon {
+            line-height: rem(20);
+            font-size: rem(30);
+            width: rem(40);
+
+            &::before,
+            &::after {
+                content: '';
+                top: rem(-13);
+                border-width: 0 rem(20) rem(13) rem(20);
+                border-color: transparent transparent $color-accent transparent;
+                transform: rotate(0deg);
+            }
+
+            &::after {
+                transform: rotate(180deg);
+                top: 100%;
+            }
+        }
+
+        // .logo__text
+        &__text {
+            font-size: rem(24);
+        }
+    }
+
+    .nav {
+
+        // .nav__item
+        &__item {
+
+            &:not(:last-child) {
+                margin-right: rem(20);
+            }
+        }
+
+        // .nav__link
+        &__link {
+            font-size: rem(14);
+
+            &::before {
+                position: absolute;
+                content: '';
+                border: rem(2) solid $color-accent;
+                width: 100%;
+                bottom: rem(-21);
+                scale: 0;
+                transition: scale .3s, bottom .3s;
+
+                .header--small & {
+                    bottom: rem(-21);
+                }
+            }
+
+            &--search {
+                width: rem(16);
+                height: rem(16);
+            }
+        }
+    }
+}
+
+
+// =================================================================
+// =================================================================
+// =================================================================
+// =================================================================
+// =================================================================
+
+
+@media (max-width: 767.98px) {
+    .header {
+
+        // .header__nav
+        &__nav {
+            padding-top: rem(80);
+            position: absolute;
+            height: 100vh;
+            // width: 0;
+            width: 50vw;
+            right: -50vw;
+            top: 0;
+            background: rgba(94, 93, 88);
+            transition: right .3s;
+        }
+
+        // .header__nav
+        &__nav.menu-open {
+            right: 0;
+        }
+    }
+
+    .nav {
+
+        // .nav__list
+        &__list {
+            height: 100%;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+        // .nav__item
+        &__item:not(:last-child) {
+            margin-right: 0;
+        }
+
+        // .nav__link
+        &__link {
+            opacity: 1;
+            font-size: rem(20);
+        }
+    }
+
+
+    .burger {
+        display: block;
+        position: relative;
+        width: 30px;
+        height: 20px;
+        cursor: pointer;
+        z-index: 5;
+
+        // .burger__lines
+        &__lines,
+        &::before,
+        &::after {
+            content: "";
+            transition: all 0.3s ease 0s;
+            right: 0;
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background: $color-text-light-main;
+            opacity: .6;
+        }
+
+        &::before {
+            top: 0;
+        }
+
+        &::after {
+            bottom: 0;
+        }
+
+        &__lines {
+            top: calc(50% - 2px);
+        }
+
+        &.menu-open {
+            span {
+                width: 0;
+            }
+
+            &::before {
+                top: calc(50% - 2px);
+                transform: rotate(-45deg);
+            }
+
+            &::after {
+                bottom: calc(50% - 2px);
+                transform: rotate(45deg);
+            }
+        }
+    }
+
+}
+
+
+// =================================================================
+// =================================================================
+// =================================================================
+// =================================================================
+// =================================================================
+
+
+@media (max-width: 479.98px) {
+    .header {
+
+        // .header__nav
+        &__nav {
+
+            width: 100vw;
+            right: -100vw;
+        }
+    }
+}

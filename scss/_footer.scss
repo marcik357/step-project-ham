@@ -1,0 +1,21 @@
+.footer {
+    background: $background-dark;
+
+    // .footer__container
+    &__container {}
+
+    // .footer__text
+    &__text {
+        text-align: center;
+        padding: rem(46) 0;
+        color: #AEAEAE;
+        font-weight: 300;
+        font-size: rem(14);
+        line-height: 26px;
+    }
+
+    // .footer__text--accent
+    &__text--accent {
+        color: $color-accent;
+    }
+}
