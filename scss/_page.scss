@@ -131,8 +131,9 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-between;
-        padding: rem(87) 0 rem(103);
+        justify-content: flex-start;
+        padding: rem(87) rem(5) rem(103);
+        gap: rem(48);
 
         & path {
             fill: $color-text-light-main;
@@ -160,10 +161,6 @@
         align-items: center;
         justify-content: center;
         transition: scale .3s;
-
-        &:not(:last-child) {
-            margin-bottom: rem(48);
-        }
     }
 
     // .options__text
@@ -254,7 +251,7 @@
         &--active {
             display: flex;
             align-items: start;
-            gap: 15px;
+            gap: rem(15);
         }
     }
 
@@ -866,10 +863,11 @@
         display: block;
     }
 }
+
 .masonry-grid {
     // height: max-content;
     margin: 0 auto;
-    
+
     & .gutter {
         width: 1.7%;
     }
