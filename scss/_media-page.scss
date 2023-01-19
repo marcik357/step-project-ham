@@ -461,10 +461,6 @@
             position: relative;
             cursor: pointer;
 
-            &:not(:last-child) {
-                // margin-right: rem(30);
-            }
-
             &:before {
                 content: '';
                 position: absolute;

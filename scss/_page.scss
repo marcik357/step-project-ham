@@ -7,9 +7,6 @@
         margin-bottom: rem(8);
     }
 
-    // .page__options
-    &__options {}
-
     // .page__services
     &__services {
         padding: rem(89) 0 rem(86);
@@ -101,9 +98,6 @@
 
 .buttons-intro {
 
-    // .buttons-intro__btn
-    &__btn {}
-
     // .buttons-intro__btn-secondary
     &__btn-secondary {
         background-color: #00CBF6;
@@ -178,19 +172,6 @@
 // =================================================================
 // =================================================================
 
-
-.services {
-
-    // .services__container
-    &__container {}
-
-    // .services__title
-    &__title {}
-
-    // .services__tabs
-    &__tabs {}
-}
-
 .tabs {
 
     // .tabs__buttons
@@ -240,9 +221,6 @@
             }
         }
     }
-
-    // .tabs__list
-    &__list {}
 
     // .tabs__item
     &__item {
@@ -301,9 +279,6 @@
         line-height: rem(40);
         color: #D8D8D8;
     }
-
-    // .just-buy__btn
-    &__btn {}
 }
 
 
@@ -313,9 +288,6 @@
 
 
 .work {
-
-    // .work__container
-    &__container {}
 
     // .work__title
     &__title {
@@ -481,12 +453,6 @@
 
 .news {
 
-    // .news__container
-    &__container {}
-
-    // .news__title
-    &__title {}
-
     // .news__list
     &__list {
         display: grid;
@@ -494,9 +460,6 @@
         gap: rem(43) rem(35);
         justify-items: center;
     }
-
-    // .news__item
-    &__item {}
 }
 
 .post {
@@ -536,12 +499,6 @@
         transition: background-color .3s;
     }
 
-    // .post__day
-    &__day {}
-
-    // .post__month
-    &__month {}
-
     // .post__title
     &__title {
         font-weight: 700;
@@ -576,9 +533,6 @@
         font-size: rem(14);
     }
 
-    // .post__comments
-    &__comments {}
-
     &:hover {
         & .post__date {
             background: $color-accent;
@@ -602,16 +556,10 @@
 
 .testimonials {
 
-    // .testimonials__container
-    &__container {}
-
     // .testimonials__title
     &__title {
         color: $color-text-light-main;
     }
-
-    // .testimonials__slider
-    &__slider {}
 }
 
 .slider {
@@ -694,10 +642,6 @@
         height: rem(67);
         position: relative;
         cursor: pointer;
-
-        &:not(:last-child) {
-            // margin-right: rem(30);
-        }
 
         &:before {
             content: '';
@@ -843,10 +787,6 @@
 
 
 .gallery {
-
-    // .gallery__container
-    &__container {}
-
     // .gallery__title
     &__title {
         margin-bottom: rem(82);

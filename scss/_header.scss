@@ -10,9 +10,6 @@
         background: rgba(94, 93, 88, 0.9);
     }
 
-    // .header__container
-    &__container {}
-
     // .header__wrapper
     &__wrapper {
         display: flex;
@@ -26,24 +23,10 @@
     .header--small &__wrapper {
         padding: rem(21) 0 rem(18);
     }
-
-    // .header__logo
-    &__logo {}
-
-    // .header__nav
-    &__nav {}
-
-    // .header__burger
-    &__burger {}
 }
 
 .burger {
     display: none;
-
-    // .burger__lines
-    &__lines {
-
-    }
 }
 
 
