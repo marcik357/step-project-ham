@@ -48,7 +48,7 @@ export function gallery() {
                 }
                 imgBlock.innerHTML = firstRow + restRow;
             } else {
-                let src = out[randomId + i + 20].download_url;
+                let src = out[randomId + i + 10].download_url;
                 imgBlock.innerHTML = `
                     <img class="image-block__img" src=${cropImg(src) } alt="Photo by ${out[randomId].author}">
                     <div class="image-block__buttons">
