@@ -36,7 +36,11 @@ export function slider() {
                 sliderList.style.translate = `${translateX += 5}%`;
                 btnPrev.disabled = true;
                 if (translateX % 100 === 0) {
-                    activateDot(document.elementFromPoint(x, y).dataset.slide);
+                    [...sliderList.children].forEach((slide, index) => {
+                        if (Math.abs(parseInt(sliderList.style.translate) / 100 - 1) == index) {
+                            activateDot(slide.dataset.slide);
+                        }
+                    })
                     clearInterval(translate);
                     setTimeout(() => {
                         btnPrev.disabled = null;
@@ -44,7 +48,7 @@ export function slider() {
                     }, 200);
                 }
             }, 20);
-            if (document.elementFromPoint(x, y) === sliderList.children[1]) {
+            if (parseInt(sliderList.style.translate) === 0) {
                 translateX = parseInt(`-${sliderList.children.length - 2}00`);
             }
         }
@@ -60,11 +64,15 @@ export function slider() {
                 sliderList.style.translate = `${translateX -= 5}%`;
                 btnNext.disabled = true;
                 if (translateX % 100 === 0) {
-                    activateDot(document.elementFromPoint(x, y).dataset.slide);
-                    if (document.elementFromPoint(x, y) === sliderList.children[sliderList.children.length - 1]) {
-                        translateX = 0;
-                        sliderList.style.translate = '0%';
-                    }
+                    [...sliderList.children].forEach((slide, index) => {
+                        if (Math.abs(parseInt(sliderList.style.translate) / 100 - 1) == index) {
+                            activateDot(slide.dataset.slide);
+                            if (Math.abs(parseInt(sliderList.style.translate) / 100) == sliderList.children.length - 2) {
+                                translateX = 0;
+                                sliderList.style.translate = '0%';
+                            }
+                        }
+                    })
                     clearInterval(translate);
                     setTimeout(() => {
                         btnNext.disabled = null;
