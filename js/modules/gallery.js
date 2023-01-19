@@ -25,9 +25,10 @@ export function gallery() {
                 let restRow = '';
                 imgBlock.classList.add('masonry-grid__item--grid')
                 for (let i = 0; i <= 1; i++) {
+                    let src = out[randomId + i].download_url;
                     firstRow += `
                     <div class="masonry-grid__item masonry-grid__item--s image-block">
-                        <img class="image-block__img" src=${out[randomId + i].download_url} alt="Photo by ${out[randomId + i].author}">
+                        <img class="image-block__img" src=${cropImg(src) } alt="Photo by ${out[randomId + i].author}">
                         <div class="image-block__buttons">
                             <a href=${out[randomId + i].download_url} class="image-block__btn image-block__btn--info" target="_blank"></a>
                             <a href=${out[randomId + i].url} class="image-block__btn image-block__btn--open" target="_blank"></a>
@@ -35,9 +36,10 @@ export function gallery() {
                     </div>`;
                 }
                 for (let i = 2; i < 11; i++) {
+                    let src = out[randomId + i].download_url;
                     restRow += `
                     <div class="masonry-grid__item masonry-grid__item--xs image-block">
-                        <img class="image-block__img" src=${out[randomId + i].download_url} alt="Photo by ${out[randomId + i].author}">
+                        <img class="image-block__img" src=${cropImg(src) } alt="Photo by ${out[randomId + i].author}">
                         <div class="image-block__buttons">
                             <a href=${out[randomId + i].download_url} class="image-block__btn image-block__btn--info" target="_blank"></a>
                             <a href=${out[randomId + i].url} class="image-block__btn image-block__btn--open" target="_blank"></a>
@@ -46,8 +48,9 @@ export function gallery() {
                 }
                 imgBlock.innerHTML = firstRow + restRow;
             } else {
+                let src = out[randomId + i + 20].download_url;
                 imgBlock.innerHTML = `
-                    <img class="image-block__img" src=${out[randomId].download_url} alt="Photo by ${out[randomId].author}">
+                    <img class="image-block__img" src=${cropImg(src) } alt="Photo by ${out[randomId].author}">
                     <div class="image-block__buttons">
                         <a href=${out[randomId].download_url} class="image-block__btn image-block__btn--info" target="_blank" ></a>
                         <a href=${out[randomId].url} class="image-block__btn image-block__btn--open" target="_blank"></a>
@@ -59,6 +62,14 @@ export function gallery() {
         }
         masonryGrid.appendChild(fragment);
         msnry.appended(elems);
+    }
+    // Crop images from API
+    function cropImg(src) {
+        let lastSlash = src.lastIndexOf('/');
+        src = src.slice(0, lastSlash);
+        lastSlash = src.lastIndexOf('/');
+        src = src.slice(0, lastSlash) + '/500/500';
+        return src
     }
     // Getting photos
     async function getResponse() {
