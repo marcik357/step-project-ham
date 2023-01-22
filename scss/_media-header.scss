@@ -18,7 +18,7 @@
             &::before,
             &::after {
                 content: '';
-                top: rem(-13);
+                top: rem(-12.5);
                 border-width: 0 rem(20) rem(13) rem(20);
                 border-color: transparent transparent $color-accent transparent;
                 transform: rotate(0deg);
