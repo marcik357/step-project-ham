@@ -28,9 +28,6 @@ export function slider() {
     // Show prev slide by click on arrow
     function showPrevSlide(e) {
         pagination.removeEventListener('click', showTestimonial);
-        // Need to catch transition on extreme slide, need to be here :)
-        let x = document.querySelector('.slider').getBoundingClientRect().x;
-        let y = document.querySelector('.slider').getBoundingClientRect().y;
         if (e.target.closest('.slider__button--prev')) {
             let translate = setInterval(() => {
                 sliderList.style.translate = `${translateX += 5}%`;
@@ -56,9 +53,6 @@ export function slider() {
     // Show next slide by click on arrow
     function showNextSlide(e) {
         pagination.removeEventListener('click', showTestimonial);
-        // Need to catch transition on extreme slide, need to be here :)
-        let x = document.querySelector('.slider').getBoundingClientRect().x;
-        let y = document.querySelector('.slider').getBoundingClientRect().y;
         if (e.target.closest('.slider__button--next')) {
             let translate = setInterval(() => {
                 sliderList.style.translate = `${translateX -= 5}%`;
